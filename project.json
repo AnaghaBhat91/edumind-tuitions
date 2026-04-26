@@ -1,0 +1,22 @@
+{
+  "overview": "A clean, modern, mobile-friendly website for EduMind Tuitions — a Kannada-only tuition center in Bengaluru. Features warm dark brown/orange gradient design with gold accents, Kannada script, grade cards (1–8), board tiles, tutor profile, and a sticky free demo bar.",
+  "features": [
+    "Kannada-only tuition center website for grades 1–8",
+    "Warm dark brown/orange gradient with gold accents and Kannada script",
+    "Grade tiles for classes 1–8 and CBSE/ICSE/State Board cards",
+    "Tutor profile: Vasundhara Bhat with 10+ years of experience",
+    "Sticky bottom bar with free demo class button",
+    "Batch timings, location, and contact sections",
+    "Fully mobile responsive single-page layout"
+  ],
+  "category": "education",
+  "tags": [
+    "tuition",
+    "kannada",
+    "education",
+    "bengaluru",
+    "static-site",
+    "school"
+  ],
+  "last_updated": "2026-04-19T17:05:57.042Z"
+}

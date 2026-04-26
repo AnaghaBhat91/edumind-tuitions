@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Space Grotesk";
+    --font-body: "DM Sans";
+    --font-mono: monospace;
+    --font-kannada: "Noto Sans Kannada", "Noto Serif Kannada",
+      "Kannada Sangam MN", "Tunga", sans-serif;
+    --radius: 0.625rem;
+
+    /* Dark warm brown palette — always-on dark mode */
+    --background: 0.13 0.04 35;
+    --foreground: 0.97 0.02 60;
+    --card: 0.18 0.05 32;
+    --card-foreground: 0.97 0.02 60;
+    --popover: 0.18 0.05 32;
+    --popover-foreground: 0.97 0.02 60;
+
+    /* Warm orange primary */
+    --primary: 0.67 0.18 42;
+    --primary-foreground: 0.13 0.04 35;
+
+    /* Gold/yellow secondary */
+    --secondary: 0.82 0.17 85;
+    --secondary-foreground: 0.13 0.04 35;
+
+    --muted: 0.22 0.05 35;
+    --muted-foreground: 0.62 0.06 50;
+
+    --accent: 0.82 0.17 85;
+    --accent-foreground: 0.13 0.04 35;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.97 0.005 25;
+
+    --border: 0.28 0.06 35;
+    --input: 0.28 0.06 35;
+    --ring: 0.67 0.18 42;
+
+    --chart-1: 0.67 0.18 42;
+    --chart-2: 0.82 0.17 85;
+    --chart-3: 0.55 0.15 180;
+    --chart-4: 0.5 0.12 260;
+    --chart-5: 0.65 0.19 22;
+
+    --sidebar: 0.16 0.045 33;
+    --sidebar-foreground: 0.97 0.02 60;
+    --sidebar-primary: 0.67 0.18 42;
+    --sidebar-primary-foreground: 0.13 0.04 35;
+    --sidebar-accent: 0.82 0.17 85;
+    --sidebar-accent-foreground: 0.13 0.04 35;
+    --sidebar-border: 0.28 0.06 35;
+    --sidebar-ring: 0.67 0.18 42;
+  }
+
+  /* Force dark — always dark design */
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    padding-bottom: 4rem; /* space for sticky bottom bar */
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .font-kannada {
+    font-family: var(--font-kannada);
+  }
+
+  .section-heading {
+    @apply font-display font-bold tracking-widest uppercase;
+  }
+
+  .section-heading-underline {
+    @apply relative inline-block;
+  }
+
+  .section-heading-underline::after {
+    content: "";
+    @apply absolute bottom-0 left-0 right-0 h-0.5 bg-accent rounded-full;
+    margin-top: 4px;
+  }
+
+  .gold-pill {
+    @apply inline-flex items-center gap-2 bg-accent text-accent-foreground font-bold rounded-full px-6 py-3 transition-smooth hover:brightness-110 shadow-md;
+  }
+
+  .dark-card {
+    @apply bg-card rounded-xl border border-border transition-smooth;
+  }
+
+  .orange-border-card {
+    @apply dark-card border-primary/30 hover:border-primary/60;
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .shadow-subtle {
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.35);
+  }
+
+  .shadow-card-glow {
+    box-shadow: 0 0 0 1px oklch(0.67 0.18 42 / 0.18), 0 4px 16px 0
+      rgba(0, 0, 0, 0.4);
+  }
+
+  .text-cream {
+    color: oklch(0.93 0.04 60);
+  }
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/assets/fonts/SpaceGrotesk.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/assets/fonts/DMSans.woff2") format("woff2");
+  font-display: swap;
+}
